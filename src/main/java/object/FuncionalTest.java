@@ -8,12 +8,14 @@ import org.junit.AfterClass;
 
 public class FuncionalTest {
 
-	
-	
-   
+	 	@AfterClass
+	    public static void tearDownClass() {
+	        getWebDriver().close();
+	    }
+	    
 	    @After
 	    public void cleanUp() {
-	    	getWebDriver().close();
+	        getWebDriver().manage().deleteAllCookies();
 	    }
 
 	

@@ -5,6 +5,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.PropertyConfigurator;
 import org.openqa.selenium.WebDriver;
 
 public class WebDriverProvider {
@@ -35,6 +36,7 @@ public class WebDriverProvider {
 		configurarGeckodriver();
 		WEB_DRIVER = new FirefoxDriver(headless());
 		WEB_DRIVER.manage().timeouts().implicitlyWait(DEFAULT_TIMEOUT_IN_SECONDS, TimeUnit.SECONDS);
+		PropertyConfigurator.configure("log4j.properties");
 	}
 
 	private static void configurarGeckodriver() {
